@@ -1,0 +1,30 @@
+static_library("sg92r_control") {
+  sources = [
+    "src/hal_iot_gpio_ex.c",
+    "src/temperature.c",
+    "src/E53_IS1.c",
+    "src/wifi_connect.c",
+    "sg92r_control.c"
+
+  ]
+
+  include_dirs = [
+    "./",
+    "//utils/native/lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+    "//base/iot_hardware/peripheral/interfaces/kits",
+    "//device/soc/hisilicon/hi3861v100/sdk_liteos/include/base",
+    "//commonlibrary/utils_lite/include",
+    "//kernel/liteos_m/components/cmsis/2.0",
+    "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//foundation/communication/wifi_lite/interfaces/wifiservice",
+    "//vendor/hisilicon/hispark_pegasus/demo/oc_demo",
+    "//device/hisilicon/hispark_pegasus/hi3861_adapter/kal/cmsis",
+    "//vendor/bearpi/bearpi_hm_nano/common/iot_hardware_hals/include", 
+    "//kernelteos_m/components/cmsis/2.0",
+    "include"
+
+    ]
+    deps = [ "//vendor/bearpi/bearpi_hm_nano/common/iot_hardware_hals:bearpi_iot_hardware_hals" ]
+}

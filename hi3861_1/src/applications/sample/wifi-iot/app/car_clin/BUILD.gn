@@ -1,0 +1,21 @@
+static_library("control"){
+    sources = [
+        "src/io_init.c",
+        "src/speed_control.c",
+        "src/E53_IS1.c",
+        "control.c"
+
+    ]
+    include_dirs = [
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/components/cmsis/2.0",
+        "//base/iot_hardware/peripheral/interfaces/kits",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//vendor/hisilicon/hispark_pegasus/demo/oc_demo",
+        "//device/hisilicon/hispark_pegasus/hi3861_adapter/kal/cmsis",
+        "//base/hiviewdfx/hiview_lite",
+        "include"
+    ]
+}

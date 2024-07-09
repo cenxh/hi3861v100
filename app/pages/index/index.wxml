@@ -1,0 +1,35 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="classroom" bindtap="classroomTap" data-classroomId="1">
+    <text class="classroom-name">教室 1</text>
+    <view class="info-container">
+      <text>温度: <text class="highlight">{{classroom1.temperature}}</text>°C</text>
+      <text>占用情况: <text class="highlight">{{classroom1.occupied ? '占用中' : '空闲'}}</text></text>
+      <text>空调状态: <text class="highlight">{{classroom1.airConditioner ? '开启' : '开启'}}</text></text>
+      <text>灯的状态: <text class="highlight">{{lampStatusText}}</text></text>
+      <text>上课情况: <text class="highlight">{{classroom1.isInSession ? '上课中' : '未上课'}}</text></text>
+    </view>
+    <button>发送上课信息</button>
+    <button bindtap="toggleOccupiedStatus" data-classroomId="1">切换占用状态</button>
+  </view>
+
+  <view class="classroom" bindtap="classroomTap" data-classroomId="2">
+    <text class="classroom-name">教室 2</text>
+    <view class="info-container">
+      <text>温度: <text class="highlight">{{classroom2.temperature}}</text>°C</text>
+      <text>占用情况: <text class="highlight">{{classroom2.occupied ? '占用中' : '空闲'}}</text></text>
+      <text>空调状态: <text class="highlight">{{classroom2.airConditioner ? '开启' : '开启'}}</text></text>
+      <text>灯的状态: <text class="highlight">{{lampStatusText}}</text></text>
+      <text>上课情况: <text class="highlight">{{classroom2.isInSession ? '上课中' : '未上课'}}</text></text>
+    </view>
+    <button>发送上课信息</button>
+    <button bindtap="toggleOccupiedStatus" data-classroomId="2">切换占用状态</button>
+  </view>
+
+  <view class="response-container">
+    <text>服务器响应:</text>
+    <text class="response-data">{{udpResData}}</text>
+  </view>
+
+  <button class="send-button" bindtap="sendMessage">向UDP服务发送消息</button>
+</view>
